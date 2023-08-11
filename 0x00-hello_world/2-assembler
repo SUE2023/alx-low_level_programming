@@ -1,2 +1,2 @@
-#!/bi/bash
+#!/bin/bash
 gcc -s $CFILE -O 0-main.s
