@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdtime.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
 
 int main(void)
 {
@@ -8,13 +8,13 @@ int main(void)
   
   srand(time(0));
   n = rand() - RAND_MAX /2;
-
   printf("%d \n", n);
 
   /* Code for printing random numbers*/
+
   if (n > 0)
     {
-      print("The number is positive.\n");
+      printf("The number is positive.\n");
     }
   else if (n < 0)
     {
@@ -25,6 +25,6 @@ int main(void)
       printf("The number is zero.\n");
     }
 
-  Return (0);
+  return (0);
   
 }
