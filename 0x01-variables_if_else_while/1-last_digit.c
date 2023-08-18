@@ -8,14 +8,13 @@ int main(void)
   int n, m;
 
   srand(time(0));
-  n = rand() - RAND_MAX /2;
+  n = rand() - RAND_MAX / 2;
 
-  /* Code that run and reminder is zero*/
+  /* Code that run and reminder is zero */
 
   n = m % 10;
 
   printf("The last digit of the number %d is %d \n", n, m);
 
-  return (0)
-  
+  return (0);
 }
