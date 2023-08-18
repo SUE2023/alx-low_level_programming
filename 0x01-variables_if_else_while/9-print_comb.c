@@ -8,21 +8,18 @@
 
 int main(void)
 {
-  int m;
+  int digit = 0;
 
-for(m = 48; m < 58; m++)
-  {
-    putchar m;
-    if(m < 57)
-      {
-	putchar(44);
-	putchar(32);
-      }
+	while (digit < 8)
+	{
+		putchar(4);
+		putchar(2);
+		putchar(',');
+		digit++;
+	}
 
-  }
- 
- putchar("\n");
+ putchar('\n);
 
- Return (0);
+ return (0);
 
 }

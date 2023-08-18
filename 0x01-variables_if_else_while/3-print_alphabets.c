@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <conio.h>
+#include<stdio.h>
 
 /**
  *Printing alphabets in lowercase then uppercase
@@ -8,26 +7,19 @@
 
 int main(void)
 {
-  int char;
-  clrscr();
+  int alphabets;
 
-  /*print uppercase letters*/
+  /*print lowercase letters */
 
-  for(ch = 'A'; ch <= 'Z'; ch++)
+  for (alphabets = 'a'; alphabets <= 'z'; alphabets++)
     {
-      putchar(ch);
-      putchar("\n");
+      putchar(alphabets);
+      putchar('\n');
     }
-  
-  /*print lowercase letters*/
-
-  for(ch = 'a'; ch <= 'z'; ch++)
+  /*print uppercase letters */
+  for (alphabets = 'A'; alphabets <= 'Z'; alphabets++)
     {
-      putchar(ch);
-      putchar("\n");
+      putchar(alphabets'\n');
     }
-  
   getch();
-  
 }
-
