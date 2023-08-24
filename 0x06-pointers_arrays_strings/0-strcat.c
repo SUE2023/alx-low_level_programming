@@ -1,15 +1,13 @@
 #include<stdio.h>
 /**
 *_strcat  - a function that concatenates two strings
-
 *@src: source string
 *@dest: source string
 *Description:  appends  src string to the dest string,
 *overwriting the terminating null byte (\0) at the end of dest,
 *and then adds a terminating null byte
-*Returns  is dest
+*Return: dest
 */
-
 char *_strcat(char *dest, char *src)
 {
 	int dlength = 0, i;
