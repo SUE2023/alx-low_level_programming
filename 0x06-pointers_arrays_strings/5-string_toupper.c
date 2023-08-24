@@ -1,9 +1,10 @@
 #include<stdio.h>
 /**
- * *string_toupper - changes all lowercase letters to uppercase
- * *string input to be converted
- * j the index reference
- * return :str
+ *string_toupper: changes lowercase to uppercase
+ *Description: changes all lowercase letters to uppercase
+ *str: string input to be converted
+ *j: the index reference
+ *return: str
  */
 char *string_toupper(char *str)
 {
