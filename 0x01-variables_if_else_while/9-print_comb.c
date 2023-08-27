@@ -1,15 +1,17 @@
 #include<stdio.h>
 
 /**
- *Description - print all combination of digit and never use variable of char type
- *use only putchar and 4 times in the code
- *Number printed in ascending order separated by , and followed by space
+ * main - prints combination of digit
+ * Description - never use variable of char type
+ * putchar used 4 times in the code
+ * Number printed in ascending order separated by ,
+ * and followed by space
+ * Return: (0)
  */
 
 int main(void)
 {
-  int digit = 0;
-
+	int digit = 0;
 	while (digit < 8)
 	{
 		putchar(4);
@@ -17,9 +19,7 @@ int main(void)
 		putchar(',');
 		digit++;
 	}
+	putchar('\n');
 
- putchar('\n);
-
- return (0);
-
+	return (0);
 }

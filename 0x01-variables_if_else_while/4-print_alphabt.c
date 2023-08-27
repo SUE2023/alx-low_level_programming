@@ -1,8 +1,10 @@
 #include <stdio.h>
 
 /**
- *Description- Print alphabets in lowercase q and e ommitted
- *Use putchar only 2 in the code
+ * main - prints alphabets in lowercase
+ * Description: q and e ommitted
+ * Use putchar only 2 in the code
+ * Return: (0)
  */
 
 int main(void)

@@ -1,19 +1,17 @@
 #include <stdio.h>
-
+/**
+ * main - prints alphabet
+ * Description: in lowercase followed by a newline
+ * Return: (0)
+ */
 int main(void)
-
 {
-  /* Declare a variable for lowercase */
-  char alphabet;
-
-  for (alphabet = 'a'; alphabet <= 'z'; alphabet++)
-
-    {
-      putchar(alphabet);
-    }
-
-  putchar('\n');
-
-  return (0);
-  
+	char alphabet;
+	
+	for (alphabet = 'a'; alphabet <= 'z'; alphabet++)
+	{
+		putchar(alphabet);
+	}
+	putchar('\n');
+	return (0);
 }

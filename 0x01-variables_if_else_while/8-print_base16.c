@@ -1,8 +1,9 @@
 #include<stdio.h>
 /**
- * main - program that prints all the numbers of base 16 in lowercase, followed by a new line.
+ * main - prints all the numbers of base 16
+ * Description: in lowercase, followed by a new line
  * putchar used 3 times in the program
- * return = 0 (success)
+ * Return: (0)
  */
 
 int main(void)

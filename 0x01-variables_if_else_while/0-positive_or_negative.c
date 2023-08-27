@@ -11,7 +11,11 @@ int main(void)
 
 	printf("%d", n);
 
-  /* Code for printing random numbers*/
+  /**
+   *  Code for printing random numbers
+   *  Description: Assigns positive or negative number
+   *  Retun: (0)
+   */
 
 	if (n > 0)
 	{

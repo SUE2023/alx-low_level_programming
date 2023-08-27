@@ -1,8 +1,9 @@
 #include<stdio.h>
 
 /**
- *main - program that prints all single digit numbers of base 10 starting from 0, followed by a new line.
- *return 0 for success
+ * main - prints all single digit numbers of base 10
+ * Description:starting from 0, followed by a new line
+ * return: (0)
  */
 int main(void)
 {
@@ -11,11 +12,10 @@ int main(void)
 	for (a = 0; a < 10; a++)
 	{
 		printf("%d", a);
-
-		if (a < 9)
-			{
-				printf(",");
-			}
+	}
+	if (a < 9)
+	{
+	printf(",");
 	}
 	printf("\n");
 	return (0);
