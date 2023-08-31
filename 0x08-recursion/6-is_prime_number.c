@@ -5,8 +5,9 @@
  * Description: a prime number
  * @n: input
  * Return: (0)
- * actual_prime - calcualtes if a number is prime
  */
+int actual_prime(int n, int i);
+
 int is_prime_number(int n)
 {
 	if (n <= 1)
@@ -28,5 +29,4 @@ int actual_prime(int n, int i)
 	if (n % i == 0 && i > 0)
 		return (0);
 	return (actual_prime(n, i - 1));
-
 }

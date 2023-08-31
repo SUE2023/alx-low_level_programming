@@ -8,23 +8,27 @@
  */
 int _sqrt_recursion(int n)
 {
-	if (n < 0)
+	int sqrt_fun(int n, int sq);
+
+	int sq = 1;
+
+	return (sqrt_fun(n, sq));
+}
+/* compare the number to the square of various number recursively */
+
+int sqrt_fun(int n, int sq)
+{
+	if (n == sq * sq)	/* Base case defined */
+	{
+		return (sq);
+	}
+	else if (sq < n)
+	{
+		return (sqrt_fun(n, ++sq));
+	}
+	else
+	{
 		return (-1);
-	return (_sqrt_recursion (n));
+	}
 }
 
-/**
- * actual_sqrt_recursion - recurses to find the natural
- * Description: square root of a number
- * @n: input
- * @i: iterator
- * Return: (0)
- */
-int actual_sqrt_recursion(int n, int i)
-{
-	if (i * i > n)
-		return (-1);
-	if (i * i == n)
-		return (i);
-	return (actual_sqrt_recursion(int n, int i);
-}

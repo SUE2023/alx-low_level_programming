@@ -5,9 +5,9 @@
  * Description: and 0 if not
  * @s: string
  * Return: (0)
- * check_pal - checks the characters
- * _strlen-recursion - returns the lenght of a string
  */
+int _strlen_recursion(char *s);
+int check_pal(char *s, int i, int len);
 int is_palindrome(char *s)
 {
 	if (*s == 0)
@@ -19,7 +19,7 @@ int is_palindrome(char *s)
  * @s: string
  * Return (0)
  */
-int_strlen_recursion(char *s)
+int _strlen_recursion(char *s)
 {
 	if (*s == '\0')
 		return (0);

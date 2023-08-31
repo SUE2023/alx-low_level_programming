@@ -7,6 +7,14 @@
  */
 void _print_rev_recursion(char *s)
 {
-	_print_rev_recursion(s + 1);
-	_putchar(*s);
+/* check if it is the end string and print newline */
+	if (*s == '\0')
+	{
+		_putchar('\n');
+	}
+	else
+	{	/* print the next character */
+		_print_rev_recursion(++s);
+		_putchar(*s);	/*print the current character*/
+	}
 }
