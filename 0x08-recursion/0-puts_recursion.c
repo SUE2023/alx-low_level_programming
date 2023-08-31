@@ -7,6 +7,14 @@
  */
 void _puts_recursion(char *s)
 {
-	_putchar(*s);
-	_puts_recursion(s + 1);
+/*  define base case */
+	if (*s == '\0')	/* Check if at the end of strig */
+	{
+		_putchar('\n');  /* print next line if end of string */
+	}
+	else
+	{
+		_putchar(*s);	/* print the first character of the string */	
+		_puts_recursion(++s);	/* recursively print the rest of the characters */
+	}
 }
