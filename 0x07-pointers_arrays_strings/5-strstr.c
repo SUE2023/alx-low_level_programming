@@ -1,11 +1,10 @@
 #include"main.h"
-#include<stddef.h>
 /**
  * _strstr -  locates a substring
  * Description: first occurance of substring in a string
  * @needle: substring
  * @haystack: string
- * Return: (NULL)
+ * Return: (0)
  */
 char *_strstr(char *haystack, char *needle)
 {
@@ -22,5 +21,5 @@ char *_strstr(char *haystack, char *needle)
 		if (*two == '\0')
 			return (haystack);
 	}
-	return (NULL);
+	return (0);
 }
