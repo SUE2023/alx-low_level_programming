@@ -1,15 +1,16 @@
 #include<stdio.h>
 /**
-*main – a program that print _putchar followed by a new line
-*return = 0 (success)
-*/
+ * main – print _putchar
+ * Description: followed by a new line
+ * Return: (0)
+ */
 int main(void)
 {
 	/*printing of _putchar by use of a string */
 	int character;
 	char c[] = "_putchar";
 
-	for (character = 0; character < 8; character++)
+	for (character = 0; character <= 8; character++)
 	{
 		putchar(c[character]);
 	}
