@@ -2,42 +2,45 @@
 #include<stdlib.h>
 #include"main.h"
 /**
- * argstostr - concatenates
- * Description: all the arguments of a program
- * @ac: name of program
- * @av: pointer to ponter
- * Return:(ptstr)
+ * argstostr - concatenates all the arguments of your program
+ * Description: concatenates all the arguments of a program
+ * @ac: number of members of av
+ * @av: array of the commandline
+ * Return: (ptrstr)
  */
 char *argstostr(int ac, char **av)
 {
-	char *ptstr;
-	int count = ac, row, column;
-	/* count total number of strings(rows and columns) */
-	/* length of each string */
-	for (row = 0; row < count; row++)
+	char *ptrstr;
+	int index, j, concatenated = 0, length = 0;
+
+	/* Check if ac and av not equal to NULL */
+	if (ac == 0 || av == NULL)
+		return (NULL);
+	/* iterate through the count */
+	for (index = 0; index < ac; index++)
 	{
-	/*each row becomes av[row] */
+		/* to know the length of the vector (av) */
+		for (j = 0; av[index][j]; j++)
+			length++;
 	}
-	for (column = 0; av[row][column] != '\0'; column++, count++)
+	length += ac;
+
+	ptrstr = malloc(length * sizeof(char) + 1);
+	if (ptrstr == NULL)
+		return (NULL);
+	/* contatenation process */
+	for (index = 0; index < ac; index++)
 	{
-		count++;
+		for (j = 0; av[index][j]; j++)
+		{
+			ptrstr[concatenated] = av[index][j];
+			concatenated++;
+		}
+		if (ptrstr[concatenated] == '\0')
+		{
+			ptrstr[concatenated++] = '\n';
+		}
 	}
 
-	/*makes room for the new line characther */
-	/* printf("%d \n", count; */
-	/* allocate space for all the strings */
-	ptstr = (char *)malloc(count * sizeof(char));
-	if (ptstr == NULL)
-		return (NULL);
-	/*concatenate all the strings */
-	for (row = 0; row < count; row++)
-	{
-		for (column = 0; av[row][column] != '\0'; column++)
-		{
-			ptstr[count] = av[row][column];
-			count++;
-		}
-		ptstr[count] = '\0';
-	}
-	return (ptstr);
+	return (ptrstr);
 }
