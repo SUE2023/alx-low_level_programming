@@ -57,18 +57,19 @@ void error(void)
  * @argv: argument vector that is array
  * Return: (0)
  */
-int main(argc, char *argv[])
+int main(int argc, char *argv[])
 {
-	char s1, *s2;
+	char *s1, *s2;
 	int len1, len2, newlen, index, carry, digit1, digit2, *result, a = 0;
 
-	s1 = argv[1], s2 = argv[2]
+	s1 = argv[1], s2 = argv[2];
 
 	if (argc != 3 || !is_digit(s1) || !is_digit(s2))
+		error();
 	len1 = _strlen(s1);
 	len2 = _strlen(s2);
 	newlen = len1 + len2 + 1;
-	result = malloc(len * sizeof(int))
+	result = malloc(newlen * sizeof(int));
 		if (!result)
 			return (1);
 	for (index = 0; index <= len1 + len2; index++)
@@ -77,24 +78,24 @@ int main(argc, char *argv[])
 	{
 		digit1 = s1[newlen] - '0';
 		carry = '0';
-		for (len2 = len2 - 1; len2 >= 0; len2--)
+		for (len2 = _strlen(s2) - 1; len2 >= 0; len2--)
 			digit2 = s2[len2] - '0';
-		carry += result[len1 + len2 + 1] + (digit * digit2);
-		result[len1 + len2] = carry % 10
-		cary /= 10;
+		carry += result[len1 + len2 + 1] + (digit1 * digit2);
+		result[len1 + len2 + 1] = carry % 10;
+		carry /= 10;
 	}
-	if (caryy > 0)
+	if (carry > 0)
 		result[len1 + len2 + 1] += carry;
 	for (index = 0; index < newlen - 1; index++)
 	{
-		if (result[i])
+		if (result[index])
 			a = 1;
 		if (a)
-			_putchar(result[index] + '0');
+		_putchar(result[index] + '0');
 	}
 	if (!a)
-		_putchar('0');
-		_putchar('\n');
+	_putchar('0');
+	_putchar('\n');
 		free(result);
 	return (0);
 }
