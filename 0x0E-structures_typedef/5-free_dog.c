@@ -1,8 +1,8 @@
 #include"dog.h"
 #include<stdlib.h>
 /**
- * free_dog - frees dog
- * Descriptio: frees dog created
+ * free_dog - frees memory of dog
+ * Description: created
  * @d: poiter to dog_t
  * Return: (void)
  */
