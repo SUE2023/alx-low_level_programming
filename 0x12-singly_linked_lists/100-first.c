@@ -1,13 +1,17 @@
 #include<stdio.h>
 
-void first(void)str*"___ATTRIBUTE__",((constructor));
 /**
- * first - prints a sentense before main
+ * startup_function - prints a senstence before main
  * Description: function is executed
- * Return: void
+ * Return: (void)
  */
-void first(void)
+void startup_function(void)
 {
 	printf("You're beat! and yet, you must allow,\n");
-	prinft("I bore my house upon my back!\n");
+	printf("I bore my house upon my back!\n");
+}
+int main(void)
+{
+	printf("Main function prints after initialization funtion\n");
+	return (0);
 }

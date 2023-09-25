@@ -4,7 +4,7 @@ global	main
 format: db'Hello, Holberton\n',0
 
 main:
-	mov	edi,	format
+	mov	edi,	1234
 	xor	eax,	eax
 	call	printf
 	mov	eax,	0

@@ -7,21 +7,20 @@
  * Description: at the beginning of a list_t list
  * @head:original pointer
  * @str: newnode to be added
- * Return: (temp)
+ * Return: (*head)
  */
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *temp;
+	list_t *newNode;
 	int length = 0;
 
-	temp = malloc(sizeof(list_t));
-	if (temp == NULL)
+	newNode = malloc(sizeof(list_t));
+	if (newNode == NULL)
 		return (NULL);
-	while (str[length])
-		length++;
-	temp->len = length;
-	temp->str = strdup(str);
-	temp->next = *head;
-	*head = temp;
-	return (temp);
+	for (length = 0; str[length] > 0; length++)
+	newNode->len = length;
+	newNode->str = strdup(str);
+	newNode->next = *head;
+	*head = newNode;
+	return (*head);
 }
