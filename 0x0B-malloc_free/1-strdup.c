@@ -19,7 +19,7 @@ char *_strdup(char *str)
 		strlength++;
 	}
 	/* size in bytes to be allocated */
-	ptstr =	(char *)malloc(strlength * sizeof(char) + 1);
+	ptstr =	(char *)malloc((strlength + 1) * sizeof(char));
 	/*check if malloc does not return null */
 	if (ptstr == NULL)
 	{
@@ -27,7 +27,7 @@ char *_strdup(char *str)
 	}
 	/* copying this string to the new memory location */
 
-	for (count = 0; str[count] != '\0'; count++)
+	for (count = 0; count < strlength ; count++)
 	{
 		ptstr[count] = str[count];
 	}
