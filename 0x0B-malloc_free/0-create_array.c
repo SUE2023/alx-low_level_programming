@@ -15,7 +15,14 @@ char *create_array(unsigned int size, char c)
 
 	/* Allocating space for all array members */
 	ptArray = (char *)malloc(size * sizeof(char));
-
+	if (size == 0)
+	{
+		return (NULL);
+	}
+	if (ptArray == NULL)
+	{
+		return (NULL); /* Return NULL to indicate failure */
+	}
 	/*put a char c in each of the memory lcoations */
 	for (count = 0; count < size; count++)
 	{
