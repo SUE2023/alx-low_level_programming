@@ -26,12 +26,10 @@ char *str_concat(char *s1, char *s2)
 	while (s2[strlength2] != '\0')
 		strlength2++;
 
-	pt = (char *)malloc((strlength1 + strlength2) * sizeof(char) + 1);
+	pt = (char *)malloc(sizeof(char) * (strlength1 + strlength2 + 1));
 	/* check if memory allocation was succesful */
 	if (pt == NULL)
-	{
 		return (NULL);
-	}
 	/* adding up the two strings */
 	for (str1 = 0; str1 < strlength1; str1++)
 		pt[str1] = s1[str1];

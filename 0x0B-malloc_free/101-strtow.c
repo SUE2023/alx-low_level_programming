@@ -35,15 +35,13 @@ char **strtow(char *str)
 	if (str == NULL || *str == '\0')
 		return (NULL);
 	for (c = height = 0; str[c] != '\0'; c++)
-	
 		if ((str[c] != ' ') && (str[c + 1] == ' ' || str[c + 1] == '\0'))
 			height++;
 	{
-		ptrstrtow = malloc(height * sizeof(char *) + 1);
+		ptrstrtow = malloc(sizeof(char *) * (height + 1));
 	}
 		if (ptrstrtow == NULL || height == 0)
 			return (NULL);
-	
 	for (index = a1 = 0; index < height; index++)
 	{
 		for (c = a1; str[c] != '\0'; c++)
