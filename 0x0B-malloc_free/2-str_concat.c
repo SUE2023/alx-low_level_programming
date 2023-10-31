@@ -34,11 +34,8 @@ char *str_concat(char *s1, char *s2)
 	for (str1 = 0; str1 < strlength1; str1++)
 		pt[str1] = s1[str1];
 	for (str2 = 0; str2 < strlength2; str2++)
-	{
-		pt[str1] = s2[str2];
-		str1++;
-	}
-	pt[str1] = '\0'; /* Add null-terminator */
+		pt[str1 + str2] = s2[str2];
+	pt[str1 + str2] = '\0'; /* Add null-terminator */
 
 	return (pt);
 }
