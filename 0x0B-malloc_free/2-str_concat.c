@@ -30,7 +30,6 @@ char *str_concat(char *s1, char *s2)
 	/* check if memory allocation was succesful */
 	if (pt == NULL)
 	{
-		free(pt);
 		return (NULL);
 	}
 	/* adding up the two strings */
@@ -41,5 +40,7 @@ char *str_concat(char *s1, char *s2)
 		pt[str1] = s2[str2];
 		str1++;
 	}
+	pt[str1] = '\0'; /* Add null-terminator */
+
 	return (pt);
 }
