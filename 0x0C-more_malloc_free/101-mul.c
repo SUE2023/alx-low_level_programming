@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include"main.h"
-
 #define ERR_MSG "Error"
 /**
  * is_digit - check if a string has non-digit
@@ -21,7 +20,6 @@ int is_digit(char *s)
 	}
 	return (1);
 }
-
 /**
  * _strlen - returns the length of a string
  * Description: returns the length of a string
@@ -38,18 +36,21 @@ int _strlen(char *s)
 	}
 	return (index++);
 }
-
 /**
- * error - indicate the main errors
+ * _error - indicate the main errors
  * Description: indicate error in the program
  * Return: (void)
  */
-void error(void)
+void _error(void)
 {
-	printf("Error\n");
-	exit(98);
+    _putchar('E');
+    _putchar('r');
+    _putchar('r');
+    _putchar('o');
+    _putchar('r');
+    _putchar('\n');
+    exit(98);
 }
-
 /**
  * main - multiply two positive numbers
  * Description: multiplies two positve numbers
@@ -65,7 +66,7 @@ int main(int argc, char *argv[])
 	s1 = argv[1], s2 = argv[2];
 
 	if (argc != 3 || !is_digit(s1) || !is_digit(s2))
-		error();
+		_error();
 	len1 = _strlen(s1);
 	len2 = _strlen(s2);
 	newlen = len1 + len2 + 1;
@@ -77,7 +78,7 @@ int main(int argc, char *argv[])
 	for (len1 = len1 - 1; len1 >= 0; len1--)
 	{
 		digit1 = s1[newlen] - '0';
-		carry = '0';
+		carry = '0';  /* Initialize carry outside the loop */
 		for (len2 = _strlen(s2) - 1; len2 >= 0; len2--)
 			digit2 = s2[len2] - '0';
 		carry += result[len1 + len2 + 1] + (digit1 * digit2);
