@@ -1,39 +1,49 @@
 #include<stdlib.h>
-#include<stdio.h>
 #include"dog.h"
 /**
- * new_dog - creates a new dog
- * Description: and stores a copy of name and owner
- * @name: member one
- * @age: member two
- * @owner: member three
- * Return: data type/dog_t
+ * *new_dog - creates a new dog file
+ * Description: creates a new dog file
+ * @name: new dog name
+ * @age: age of the new dog
+ * @owner: owner of the new dog
+ * Return: dog
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int index, lenNew, lenOld;
-	struct dog *new_dog = NULL;
+	size_t newname, newowner, index;
+	dog_t *dog;
 
-	lenNew = 0;
-	while (name[lenNew] != '\0')
-		lenNew++;
-	lenOld = 0;
-	while (name[lenOld] != '\0')
-		lenOld++;
-	new_dog = malloc(sizeof(struct dog));
-	if (new_dog == NULL)
+	if (name == NULL || owner == NULL)
 		return (NULL);
-	new_dog->name = malloc(lenNew + 1);
-	if (new_dog->name == NULL)
+	dog = malloc(sizeof(dog_t));
+	if (dog == NULL)
 		return (NULL);
-	new_dog->owner = malloc(lenOld + 1);
-	if (new_dog->owner == NULL)
+	/* length to assign to new dog name */
+	for (newname = 0; name[newname]; newname++)
+		;
+	newname++;
+	dog->name = malloc(newname * sizeof(char));
+	if (dog->name == NULL)
+	{
+		free(dog->name);
+		free(dog);
 		return (NULL);
-	for (index = 0; index <= lenNew; index++)
-		new_dog->name[index] = name[index];
-	for (index = 0; index <= lenOld; index++)
-		new_dog->owner[index] = owner[index];
-	new_dog->age = age;
-	return (new_dog);
+	}
+	for (index = 0; index < newname; index++)
+		dog->name[index] = name[index];
+	dog->age = age;
+	for (newowner = 0; owner[newowner]; newowner++)
+		;
+	newowner++;
+	dog->owner = malloc(newowner * sizeof(char));
+	if (dog->owner == NULL)
+	{
+		free(dog->owner);
+		free(dog);
+		return (NULL);
+	}
+	for (index = 0; index < newowner; index++)
+		dog->owner[index] = owner[index];
+	return (dog);
 
 }
