@@ -1,6 +1,6 @@
-#ifndef MACRO_PIE_H
-#define MACRO_PIE_H
+#ifndef MACRO_PIE_H_
+#define MACRO_PIE_H_
 
-#define MACRO PIE (3.14159265359)
+#define MACRO (PIE 3.14159265359)
 
 #endif
