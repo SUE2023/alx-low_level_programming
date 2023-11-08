@@ -1,18 +1,17 @@
 #include"function_pointers.h"
 #include<stdio.h>
-#include<stdlib.>
+#include<stdlib.h>
 #include"3-calc.h"
 /**
  * get_op_func - selects correction function
- * Description: to perform action act by user
+ * Description: to perform action asked by user
  * @s: the operator
  * @int: the input
  * Return: (0)
  */
 int (*get_op_func(char *s))(int, int)
 {
-	op_t ops[] =
-	{
+	op_t ops[] = {
 		{" + ", op_add},
 		{" - ", op_sub},
 		{" * ", op_mul},
