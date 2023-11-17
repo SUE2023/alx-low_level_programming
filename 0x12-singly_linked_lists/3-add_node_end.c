@@ -17,13 +17,17 @@ list_t *add_node_end(list_t **head, const char *str)
 	newNode = malloc(sizeof(list_t));
 	if (newNode == NULL)
 	{
-		free(newNode);
 		return (NULL);
-	}	
+	}
 	for (length = 0; str[length] > 0; length++)
-		;
+		;/* OPTION for the loop is  newNode->len = strlen(str);*/
 	newNode->len = length;
 	newNode->str = strdup(str);
+	if (newNode->str == NULL)
+	{
+		free(newNode); /*Free allocated memory before returning NULL*/
+		return (NULL);
+	}
 	newNode->next = NULL;
 	if (*head == NULL)
 		*head = newNode;
@@ -35,6 +39,7 @@ list_t *add_node_end(list_t **head, const char *str)
 		current->next = newNode;
 	}
 	printf("[%d] %s\n", newNode->len, newNode->str);
-	return (*head);
+
+	return (newNode);
 
 }
