@@ -14,6 +14,7 @@ void free_list(list_t *head)
 
 	while (currentNode != NULL)
 	{
+		currentNode = nextNode;
 		nextNode = currentNode->next;/*save the nextNode before freeing it*/
 		free(currentNode);/* Freed the currentNode*/
 		currentNode = nextNode;/* Moving to next done*/
