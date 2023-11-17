@@ -17,10 +17,7 @@ size_t print_list(const list_t *head)
 		if (head->str == NULL)
 			printf("[0](nil)\n");
 		else
-		{
 			printf("[%d] %s\n", head->len, head->str);
-			printf("[%d] %p\n", head->len, (void *) &head->str);/*prints address*/
-		}
 		node_count++;
 		head = head->next;
 	}
