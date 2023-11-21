@@ -16,7 +16,7 @@ size_t print_listint_safe(const listint_t *head)
 
 	if (headptr == NULL)
 		exit(98);
-	while (headptr != NULL && newheadptr != NULL)
+	while (headptr != NULL && newheadptr != NULL && newheadptr->next != NULL)
 	{
 		printf("[%p] %d\n", (void *)headptr, headptr->n);
 		headptr = headptr->next;
@@ -25,9 +25,11 @@ size_t print_listint_safe(const listint_t *head)
 
 		if (headptr == newheadptr)
 		{
-			printf("[%p] %d\n",(void *)headptr, headptr->n);
+			printf("[%p] %d(loop detected)\n", (void *)headptr, headptr->n);
 			break;
 		}
+		newheadptr = newheadptr->next;
 	}
 	return (count);
+
 }
