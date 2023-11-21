@@ -1,5 +1,5 @@
-#include "lists.h"
 
+<<<<<<< HEAD
 /**
  * find_listint_loop - finds the loop
  * Description:in a linked list
@@ -31,3 +31,5 @@ listint_t *find_listint_loop(listint_t *head)
 	return (NULL);
 
 }
+=======
+>>>>>>> d97225d8f8b66fef88ff72a0e9b73629fa6d042a
