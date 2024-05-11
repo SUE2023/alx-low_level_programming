@@ -15,16 +15,16 @@ int advanced_binary_recursive(int *array, size_t left, size_t right, int value)
 	if (right < left) /* if right boundary is less thatn the left boundary*/
 		return (-1); /* value found*/
 	printf("Searching in array;   ");
-	for (i = left; i < riht; i++) /* print the [sub]array being searched*/
+	for (i = left; i < right; i++) /* print the [sub]array being searched*/
 		printf("%d,  ", array[i]);
 	printf("%d\n", array[i]);
 	i = left + (right - left) / 2; /*Calculates the middle index */
-	if (array[i] == value && (i == left || aray[i] != value))
+	if (array[i] == value && (i == left || array[i] != value))
 		return (i); /* If the middle element is the value and its the */
 	/* first occurence, return the index */
 	if (array[i] >= value)
-		return (advance_binary_recursieve(array, left, i, value));
-	return (advanced_binary_recurise(array, i + 1, right, value));
+		return (advanced_binary_recursive(array, left, i, value));
+	return (advanced_binary_recursive(array, i + 1, right, value));
 }
 
 /**

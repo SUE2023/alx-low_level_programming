@@ -50,7 +50,7 @@ int exponential_search(int *array, size_t size, int value)
 	}
 	/* Determine the range where the value is expected to be foudn */
 	right = i < size ? i : size - 1;
-	printf("Value found between index[%ld] and [%d]\n", i / 2, right);
-	return (_binary_search(array, i / 2, right, value));
+	printf("Value found between index[%ld] and [%ld]\n", i / 2, right);
+	return (binary_search(array, i / 2, right, value));
 	/* performs binary search withing the identified range */
 }
